@@ -7,6 +7,11 @@ using namespace std;
     Time: O(m*n), Space: O(m*n)
 */
 
+/*
+    idea:
+        dp[i][j] = minimum sum i can get from i,j to n-1,m-1 with down and right moves
+*/
+
 class Solution
 {
 public:
