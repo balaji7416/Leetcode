@@ -7,6 +7,16 @@ using namespace std;
     Time: O(m*n), Space: O(m*n)
 */
 
+/*
+    idea:
+        dp[idx][sum] = from my current idx and current sum, how many ways i can find a subset with sum equal to target
+                        by adding or subtracting nums[idx]
+        #note: all nums are to be included in the subset
+    i have used top down dp!
+    listen tabulation means bottom up dp (filling a table) don't ever say top down tabulation
+    it's like saying "iam driving a car forward... in reverse"
+*/
+
 class Solution
 {
 public:
