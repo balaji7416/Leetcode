@@ -9,9 +9,7 @@ using namespace std;
 
 /*
     idea: equal subset sum => check whether there exits a subset with sum equal to total_sum/2
-*/
-/*
-    this is top to bottom tabulation
+        dp[idx][sum] = from my current idx and current sum, whether i can find a subset with sum equal to total_sum/2
 */
 class Solution
 {
