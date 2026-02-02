@@ -8,10 +8,12 @@ using namespace std;
 */
 
 /*
-    f(i,j) => no.of disinct subsequences in s[i:] which match target string
-   t[j:] base cases: if(target ends i.e., j == t.size()): return 1; (consider
-   one perfect match) if(string ends before target i.e.,  i == s.size()): return
-   0; (can't find subsequence in s anymore)
+    f(i,j) => no.of disinct subsequences in s[i:] which match target string t[j:]
+    base cases:
+    if(target ends i.e., j == t.size()):
+        return 1; (consider one perfect match)
+    if(string ends before target i.e.,  i == s.size()):
+        return 0; (can't find subsequence in s anymore)
 */
 /*
     dp[i][j] = no.of distinct subsequences in s[i:] which match target string

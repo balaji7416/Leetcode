@@ -8,7 +8,7 @@ using namespace std;
 */
 
 /*
-    f(i,j,i+j) => can s3[i+j:] be formed from s1[i:] and s2[j:]
+    f(i,j) => can s3[i+j:] be formed from s1[i:] and s2[j:]
     base cases:
         if(s3 completes):
             i == s1.size() && j == s2.size()
@@ -17,7 +17,6 @@ using namespace std;
 /*
     i+j = k
     dp[i][j] = can s3[i+j:] be formed from s1[i:] and s2[j:]
-
 */
 class Solution
 {
