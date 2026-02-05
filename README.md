@@ -4,8 +4,8 @@ This repository contains my solutions to **LeetCode problems**, solved as part o
 
 ## Stats
 
-- Total Problems Solved: 80
-- Easy: 27 | Medium: 40 | Hard: 13 (updated on 2026-02-05)
+- Total Problems Solved: 83
+- Easy: 30 | Medium: 40 | Hard: 13 (updated on 2026-02-05)
 
 ## Goals
 
