@@ -21,13 +21,13 @@ This repository contains my solutions to **LeetCode problems**, solved as part o
 - Dynamic Programming
 - Hashmaps (in progress...)
 
-## 🗂 Organization
+## Organization
 
 - Problems are grouped by topic
 - Each file contains:
   - Clean solution
   - Time & space complexity
 
-## 🛠 Language
+## Language
 
 - C++
