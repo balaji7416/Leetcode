@@ -2,7 +2,7 @@
 using namespace std;
 
 /*
-    #note: this problem is premium in leetcode so i refered online for the problem
+    #note: this problem is premium in leetcode so i refered to online for the problem
     Problem 325: Maximum Size Subarray Sum Equals k
     Given an array nums and a target value k, find the maximum length of a subarray that sums to k. If there isn't one, return 0 instead.
 
@@ -50,7 +50,7 @@ public:
                 maxLen = max(maxLen, i - firstIdx[req]);
             }
 
-            // add to firstIdx only if it's not added before
+            // add to firstIdx only if it's not added before to avoid overwriting
             if (!firstIdx.count(prefix[i]))
                 firstIdx[prefix[i]] = i;
         }
