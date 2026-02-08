@@ -51,6 +51,7 @@ public:
             }
 
             // add to firstIdx only if it's not added before to avoid overwriting
+            // since we want to maximize the length
             if (!firstIdx.count(prefix[i]))
                 firstIdx[prefix[i]] = i;
         }

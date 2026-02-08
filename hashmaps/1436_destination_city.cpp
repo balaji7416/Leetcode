@@ -29,6 +29,7 @@ public:
             if (!sources.count(path[1]))
             {
                 ans = path[1];
+                break; // since question guarantees there is only one destination city
             }
         }
         return ans;

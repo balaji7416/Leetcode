@@ -13,6 +13,12 @@ using namespace std;
         and if cycle is detected then return false
 
     idea2: floyd cycle detection
+
+        it was given if number doen't end in 1 it will loop endlessly
+        and we can see even if it did end up in one it will give the same result
+        so we can safely use floyd cycle detection technique and then check whether
+        slow or fast end up in one or not
+
         use 2 pointers
         slow = nums[slow]
         fast = nums[nums[fast]]

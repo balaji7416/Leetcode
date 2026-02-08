@@ -9,6 +9,17 @@ using namespace std;
 
 /*
     idea:
+
+    stadard prefix sum + hashmap solution:
+        encode 0 -> +1 and 1 -> -1
+        now calculate prefix sum array
+        now derive the required equation i.e., prefix[r+1]-prefix[l] = 0
+            => prefix[r+1] = prefix[l]
+            i.e., if we see the same prefix sum again, the subarray between the two indices has sum 0.
+        make sure only use the first occurence of the prefix sum, don't overwrite it to ensure max length
+        now track the maximum length found.
+
+
     Convert the problem:
         Treat 0 as -1 and 1 as +1.
 
