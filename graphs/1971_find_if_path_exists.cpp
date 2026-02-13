@@ -35,6 +35,28 @@ public:
         }
         return false;
     }
+    /* Iterative version
+    bool dfs(int src, int dest, vector<vector<int>> &adj, vector<bool> &visited){
+        stack<int> stk;
+        stk.push(src);
+        visited[src] = true;
+        while(!stk.empty()){
+            int u = stk.top();
+            stk.pop();
+            if(u == dest){
+                return true;
+            }
+
+            for(auto n: adj[u]){
+                if(!visited[n]){
+                    visited[n] = true;
+                    stk.push(n);
+                }
+            }
+        }
+        return false;
+    }
+    */
     bool validPath(int n, vector<vector<int>> &edges, int source, int destination)
     {
         vector<bool> visited(n, false);
