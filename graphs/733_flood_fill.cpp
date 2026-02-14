@@ -10,6 +10,8 @@ using namespace std;
 /*
     idea:
         dfs + 2d grid
+        run dfs/bfs from the given sr, sc and change all the nodes reachable from sr, sc
+        having same color as starting node to color
 */
 
 class Solution
