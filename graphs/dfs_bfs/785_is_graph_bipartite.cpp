@@ -69,7 +69,29 @@ public:
         }
         return true;
     }
-
+    bool bfs(int node, vector<int> &color, vector<vector<int>> &adj)
+    {
+        queue<int> q;
+        q.push(node);
+        while (!q.empty())
+        {
+            auto x = q.front();
+            q.pop();
+            for (auto neighbor : adj[x])
+            {
+                if (color[neighbor] == -1)
+                {
+                    color[neighbor] = 1 - color[x];
+                    q.push(neighbor);
+                }
+                else if (color[neighbor] == color[x])
+                {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
     bool isBipartite(vector<vector<int>> &graph)
     {
         int n = graph.size();
