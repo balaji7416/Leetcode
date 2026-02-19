@@ -18,6 +18,71 @@ using namespace std;
     - Pop stack to get valid course order.
 */
 
+/* with kahn's algorithm using bfs*/
+class Solution
+{
+public:
+    vector<int> findOrder(int numCourses, vector<vector<int>> &prerequisites)
+    {
+        int n = numCourses;
+        vector<vector<int>> adj(n);
+
+        // build the adj list
+        for (int i = 0; i < prerequisites.size(); i++)
+        {
+            int u = prerequisites[i][0];
+            int v = prerequisites[i][1];
+            adj[v].push_back(u);
+        }
+
+        // calc inDegres of all nodes
+        vector<int> inDegree(n, 0);
+        for (int u = 0; u < n; u++)
+        {
+            for (auto v : adj[u])
+            {
+                inDegree[v]++;
+            }
+        }
+
+        // push nodes with inDegree 0, meaning no dependencies
+        queue<int> q;
+        for (int i = 0; i < n; i++)
+        {
+            if (inDegree[i] == 0)
+            {
+                q.push(i);
+            }
+        }
+
+        vector<int> topo;
+        while (!q.empty())
+        {
+            int u = q.front();
+            q.pop();
+            topo.push_back(u);
+
+            // decrease the inDegree for all of it's neighbors
+            for (auto v : adj[u])
+            {
+                inDegree[v]--;
+                // if inDegree of any neighbor becomes 0 push it into q
+                if (inDegree[v] == 0)
+                {
+                    q.push(v);
+                }
+            }
+        }
+
+        // if toposize is not equal to no.of nodes then cycle exists
+        if (topo.size() < n)
+        {
+            return {};
+        }
+        return topo;
+    }
+};
+
 class Solution
 {
 public:
