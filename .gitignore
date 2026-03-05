@@ -5,6 +5,7 @@
 
 #ignore all .vscode folders
 .vscode/
+.cph
 
 #os junk files
 .DS_Store
