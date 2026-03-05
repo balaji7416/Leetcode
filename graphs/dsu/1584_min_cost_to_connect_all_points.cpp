@@ -4,7 +4,8 @@ using namespace std;
 /*
     Problem 1584: Min Cost to Connect All Points
     Pattern: DSU + Kruskal's Algorithm
-    Time: O(V+E), Space: O(V)
+    Time: with krushkal -> O(n^2 log n), with prims -> O(n^2)
+    Space: O(n^2) ; n->number of points
 */
 
 /* Logic:
@@ -33,6 +34,51 @@ using namespace std;
     (Greedy choice + cycle prevention via DSU).
 */
 
+/*prims*/
+class Solution
+{
+public:
+    int minCostConnectPoints(vector<vector<int>> &points)
+    {
+        int n = points.size();
+        vector<int> dist(n, INT_MAX);   // cost of nodes to be added in mst
+        vector<bool> visited(n, false); // nodes in mst
+
+        dist[0] = 0;
+        int cost = 0;
+        for (int i = 0; i < n; i++)
+        {
+            int u = -1;
+
+            // pick the min cost node
+            for (int j = 0; j < n; j++)
+            {
+                if (!visited[j] && (u == -1 || dist[j] < dist[u]))
+                {
+                    u = j;
+                }
+            }
+
+            cost += dist[u];
+            visited[u] = true;
+
+            // update the distances
+            int x1 = points[u][0], y1 = points[u][1];
+            for (int v = 0; v < n; v++)
+            {
+                if (!visited[v])
+                {
+                    int x2 = points[v][0], y2 = points[v][1];
+                    int w = abs(x2 - x1) + abs(y2 - y1);
+                    dist[v] = min(dist[v], w);
+                }
+            }
+        }
+        return cost;
+    }
+};
+
+/*Krushkal's Algorithm*/
 struct DSU
 {
     int components;
